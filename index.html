@@ -1,14 +1,11 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>Skylith - Insufficient permission</title>
+    <title>Skylith - not-approved</title>
     <style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: #e3e3e3;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
+            background-color: #e3e3e3;
         }
         .topbar {
             background: #0074BD;
@@ -34,26 +31,6 @@
             border-radius: 4px;
             font-size: 14px;
         }
-        .line-animated {
-            margin: 10px auto;
-            width: 100%;
-            border: 0;
-            border-top: 1px solid lightgray;
-            opacity: 0;
-            animation: fadeInLine 0.5s ease-out 0.4s forwards;
-        }
-        
-        @keyframes fadeInLine {
-            from {
-                width: 0;
-                opacity: 0;
-            }
-            to {
-                width: 100%;
-                opacity: 1;
-    }
-}
-
         .sidebar {
             position: fixed;
             width: 180px;
@@ -147,25 +124,84 @@
             color: gray;
             font-size: 12px;
         }
-        .ban-box {
-            background-color: rgba(247, 247, 248, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 4.5px;
-            width: 100%;
-            max-width: 435px;
-            padding: 20px;
-            overflow-y: auto;
+         .ban-box {
+            background-color: #F7F7F8;
+            padding: 15px;
+            border-radius: 0px;
+            max-width: 455px;
+            width: 90%;
+            height: 450px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.2s forwards;
             resize: vertical;
+            overflow: auto;
+            min-height: 0px;
+    
             position: absolute;
-            top: 51%;
+            top: 53%;
             left: 51%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+        .ban-box h1 {
+            font-size: 28px;
+            color: #202227;
+            margin: 4px 4px 4px -3px;
+            line-height: 0.75;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.4s forwards;
         }
-         .ban-box recentviolation {
+        .ban-box h2 {
+            font-size: 0px;
+            color: #e5e5e5;
+            margin: 4px 4px 4px 0.2px;
+            line-height: 0.9;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.4s forwards;
+        }
+
+        .ban-box p:first-child {
+            margin-top: 5px;
+        }
+
+        .ban-box p {
+            font-size: 11.5px;
+            margin: 4px 4px 9px -3px;
+            line-height: 1.55;
+            color: #202227;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.6s forwards;
+        }
+
+         .ban-box p2 {
             display: block;
             font-size: 14.5px;
+            margin: 4.5px 0;
+            padding: 10px 14px;
+            background-color: #f9f9f9;
+            border: 1px solid black;
+            border-radius: 0.5px;
+            color: #202227;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.6s forwards;
+}
+
+        .ban-box p3 {
+            font-size: 14px;
+            margin: 4px 4px 9px -3px;
+            line-height: 1.55;
+            color: #202227;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.6s forwards;
+        }
+
+         .ban-box recentviolation {
+            display: block;
+            font-size: 11.5px;
             margin: 10px 0;
             padding: 5px 14px;
             background-color: #f9f9f9;
@@ -174,55 +210,11 @@
             color: #202227;
             font-weight: 500;
             opacity: 0;
-            animation: slideFadeInParagraph 0.5s ease-out 0.4s forwards;
+            animation: fadeIn 0.5s ease-out 0.6s forwards;
 }
-
-        .ban-box h1 {
-            font-size: 20px;
+        .ban-box b {
+            color: #f0f0f0;
             font-weight: 500;
-            margin-bottom: 10px;
-            color: #202227;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: slideFadeInHeading 0.5s ease-out 0.2s forwards;
-            text-align: center;
-            margin: 0;
-            margin-top: -5px;
-            margin-bottom: 11px;
-            padding: 0;
-        }
-
-
-        .ban-box h2 {
-            font-size: 0.01px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #202227;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: slideFadeInHeading 0.5s ease-out 0.2s forwards;
-            text-align: center;
-            margin: 0;
-            margin-top: -5px;
-            margin-bottom: 11px;
-            padding: 0;
-        }
-
-        .ban-box p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            color: #202227;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideFadeInParagraph 0.5s ease-out 0.4s forwards;
-        }
-
-        .ban-box strong {
-            font-weight: 600;
-            color: #202227;
         }
 
         .ban-box span {
@@ -230,36 +222,27 @@
             text-decoration: none;
         }
 
+        .logout-button {
+            margin-top: 35px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: 1px solid #777;
+            border-radius: 6px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.8s forwards;
+        }
+
+        .logout-button:hover {
+            background-color: #3a3a3a;
+        }
+
         .caution {
             color: #ff4d4d;
             font-weight: bold;
-        }
-
-        .ban-box p strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        @keyframes slideFadeInHeading {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideFadeInParagraph {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
@@ -284,31 +267,17 @@
         </ul>
         <button>Assine VIP</button>
     </div>
-    <div class="main-content">
-    <div class="ban-box" style="height: 276px;">
-            <h1>Banido(a) por 1 dia</h1>
-            <hr class="line-animated">
-            
-            <p>Nossos supervisores de conteúdo determinaram que o seu comportamento na Skylith violou os nossos Termos de Uso.</p>
-            <p>Violação recente</p>
-            <recentviolation>Revisado<br><strong>Quarta-feira, 28 de Maio de 2025 às 17:08<h2>h2</h2><h2>h2</h2></strong><h2>h2</h2>Observação do moderador<br><strong>A Skylith não permite encontros ou trocas românticas entre avatares.
-</strong><h2>h2</h2><h2>h2</h2><h2>h2</h2><p2>Motivo<h2>h2</h2><strong>Namoro e conteúdo romântico</strong><h2>h2</h2><h2>h2</h2>Item ofensivo<h2>h2</h2><strong>I+AV</strong></p2></recentviolation>
-            
-            
-            
-            <p>Por favor, respeite as Regras da Comunidade Skylith para que a Skylith possa ser divertida para usuários de todas as idades.</p>
-            <p>Sua conta foi suspensa devido ao seu histórico de violações recentes. Você pode reativá-la após,<strong>Quinta-feira, 29 de Maio de 2025 às 17:08</strong></p>
-            <p>Para solicitar um apelo, por favor envie um email para skylithappeals@outlook.com.</p>
-            <h2>(h2)</h2>
-            <hr class="line-animated">
-            <p><span>Regras da Comunidade Skylith</span><br><br><span>Termos de Uso</span><br><br><span>Denúncias e apelações</span></p>
-            
-            
-            
-        <h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2></div>
+    <div class="main-content"></div>
+<div class="ban-box" style="height: 344px;">
+        <h1>Banido(a) por 1 dia</h1>
         
+        <h2>[h2]</h2><h2>[h2]</h2><h2>[h2]</h2><p>Nossos supervisores de conteúdo determinaram que o seu comportamento na Skylith violou os nossos <span>Termos de Uso</span>.</p>
+        <p>Violação recente:</p>
+        <recentviolation>Revisado: <strong>28/5/25, 17:21 BRT<h2>h2</h2><h2>h2</h2></strong>Observação do moderador: <strong>A Skylith não permite encontros ou trocas românticas entre avatares.</strong><h2>h2</h2><h2>h2</h2><p2>Motivo: <strong>Namoro e conteúdo romântico<h2>h2</h2><h2>h2</h2></strong><h2></h2>Item ofensivo: <strong>I+AV
+</strong></p2></recentviolation>
         
-        
+        <p>Por favor, respeite as <span>Regras da Comunidade Skylith </span>para que a Skylith possa ser divertida para usuários de todas as idades.</p>
+        <p>Sua conta foi suspensa devido ao seu histórico de violações recentes. Você pode reativá-la após 29/5/25, 17:21 BRT</p><p>Para solicitar um apelo, por favor envie um email para<span> skylithappeals@outlook.com.</span></p>
     </div>
 
 
