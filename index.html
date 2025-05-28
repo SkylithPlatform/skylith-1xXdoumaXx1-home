@@ -1,11 +1,14 @@
-<html lang="en"><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Início - Skylith</title>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Skylith - Insufficient permission</title>
     <style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #e3e3e3;
+            background: #e3e3e3;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
         }
         .topbar {
             background: #0074BD;
@@ -31,6 +34,26 @@
             border-radius: 4px;
             font-size: 14px;
         }
+        .line-animated {
+            margin: 10px auto;
+            width: 100%;
+            border: 0;
+            border-top: 1px solid lightgray;
+            opacity: 0;
+            animation: fadeInLine 0.5s ease-out 0.4s forwards;
+        }
+        
+        @keyframes fadeInLine {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 100%;
+                opacity: 1;
+    }
+}
+
         .sidebar {
             position: fixed;
             width: 180px;
@@ -63,13 +86,9 @@
         }
         .sidebar li {
             padding: 10px 20px;
+            cursor: pointer;
             font-size: 14px;
             transition: color 0.3s ease;
-        }
-        .sidebar li a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
         }
         .sidebar li:hover {
             color: #ff6600;
@@ -107,10 +126,7 @@
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 20px;
         }
-        .game-tile-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
+        .game-tile {
             background: white;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -119,7 +135,7 @@
             font-size: 14px;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .game-tile-link:hover {
+        .game-tile:hover {
             transform: translateY(-5px) scale(1.03);
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
@@ -129,11 +145,121 @@
         .game-tile .info span {
             display: block;
             color: gray;
-            font-size: 14px;
+            font-size: 12px;
         }
-        .game-tile .info .game-title {
-            color: black;
-            font-weight: normal;
+        .ban-box {
+            background-color: rgba(247, 247, 248, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 4.5px;
+            width: 100%;
+            max-width: 435px;
+            padding: 20px;
+            overflow-y: auto;
+            resize: vertical;
+            position: absolute;
+            top: 51%;
+            left: 51%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+         .ban-box recentviolation {
+            display: block;
+            font-size: 14.5px;
+            margin: 10px 0;
+            padding: 5px 14px;
+            background-color: #f9f9f9;
+            border-left: 1px solid black;
+            border-radius: 0.5px;
+            color: #202227;
+            font-weight: 500;
+            opacity: 0;
+            animation: slideFadeInParagraph 0.5s ease-out 0.4s forwards;
+}
+
+        .ban-box h1 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #202227;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideFadeInHeading 0.5s ease-out 0.2s forwards;
+            text-align: center;
+            margin: 0;
+            margin-top: -5px;
+            margin-bottom: 11px;
+            padding: 0;
+        }
+
+
+        .ban-box h2 {
+            font-size: 0.01px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #202227;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideFadeInHeading 0.5s ease-out 0.2s forwards;
+            text-align: center;
+            margin: 0;
+            margin-top: -5px;
+            margin-bottom: 11px;
+            padding: 0;
+        }
+
+        .ban-box p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            color: #202227;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideFadeInParagraph 0.5s ease-out 0.4s forwards;
+        }
+
+        .ban-box strong {
+            font-weight: 600;
+            color: #202227;
+        }
+
+        .ban-box span {
+            color: #5E8FFF;
+            text-decoration: none;
+        }
+
+        .caution {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        .ban-box p strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @keyframes slideFadeInHeading {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideFadeInParagraph {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -141,68 +267,49 @@
     <div class="topbar">
         <div class="left-section">Skylith</div>
         <div class="right-section">
+            <span class="points">💵 ?</span>
             
-            <span class="points">💵 8,000</span>
         </div>
     </div>
     <div class="sidebar">
         <ul>
-            <li><a href="javascript:void(0)">1xXdoumaXx1</a></li>
-            <li><a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-home/">🏠 Início</a></li>
-            <li><a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-1xXdoumaXx1-profile/">👤 Perfil</a></li>
-            <li><a href="javascript:void(0)">✉️ Mensagens</a></li>
-            <li><a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-1xXdoumaXx1-profile/">👥 Amigos</a></li>
-            <li><a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-1xXdoumaXx1-profile/">👘 Roupas</a></li>
-            <li><a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-1xXdoumaXx1-profile/">💼 Inventário</a></li>
-            <li><a href="javascript:void(0)">🔁 Trocar</a></li>
+            <li>1xXdoumaXx1</li>
+            <li>🏠 Início</li>
+            <li>👤 Perfil</li>
+            <li>✉️ Mensagens</li>
+            <li>👥 Amigos</li>
+            <li>👘 Roupas</li>
+            <li>💼 Inventário</li>
+            <li>🔁 Trocar</li>
         </ul>
         <button>Assine VIP</button>
     </div>
     <div class="main-content">
-        <div class="voice-box">
-            <h3>🎙️ Desbloqueie o Chat de voz</h3>
-            <p>Adicione o automod para um canal de voz para habilitar o Chat de voz.</p>
-        </div>
-        <h2>Recomendações para você</h2><div class="recommended">
-            <a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-jujutsu-basketball/" class="game-tile-link">
-                <div class="game-tile">
-                    <div class="info">
-                        <span class="game-title">🏀 Jujutsu: Basketball 🏀</span>
-                        <span>Oficial</span>
-                        <span>Avaliação 91%</span>
-                    </div>
-                </div>
-            </a>
-            <a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-growagarden2D/" class="game-tile-link">
-                <div class="game-tile">
-                    <div class="info">
-                        <span class="game-title">🌱 Grow a Garden 2D 🌱</span>
-                        <span>Por moonbyte</span>
-                        <span>Avaliação 100%</span>
-                    </div>
-                </div>
-            </a>
+    <div class="ban-box" style="height: 276px;">
+            <h1>Banido(a) por 1 dia</h1>
+            <hr class="line-animated">
             
-        <a href="https://skylithplatform.github.io/skylith-1xXdoumaXx1-alien-attack/" class="game-tile-link">
-                <div class="game-tile">
-                    <div class="info">
-                        <span class="game-title">👽 Alien Attack 👽</span>
-                        <span>Por moonbyte</span>
-                        <span>Avaliação 89%</span>
-                    </div>
-                </div>
-            </a></div>
+            <p>Nossos supervisores de conteúdo determinaram que o seu comportamento na Skylith violou os nossos Termos de Uso.</p>
+            <p>Violação recente</p>
+            <recentviolation>Revisado<br><strong>Quarta-feira, 28 de Maio de 2025 às 17:08<h2>h2</h2><h2>h2</h2></strong><h2>h2</h2>Observação do moderador<br><strong>A Skylith não permite encontros ou trocas românticas entre avatares.
+</strong><h2>h2</h2><h2>h2</h2><h2>h2</h2><p2>Motivo<h2>h2</h2><strong>Namoro e conteúdo romântico</strong><h2>h2</h2><h2>h2</h2>Item ofensivo<h2>h2</h2><strong>I+AV</strong></p2></recentviolation>
+            
+            
+            
+            <p>Por favor, respeite as Regras da Comunidade Skylith para que a Skylith possa ser divertida para usuários de todas as idades.</p>
+            <p>Sua conta foi suspensa devido ao seu histórico de violações recentes. Você pode reativá-la após,<strong>Quinta-feira, 29 de Maio de 2025 às 17:08</strong></p>
+            <p>Para solicitar um apelo, por favor envie um email para skylithappeals@outlook.com.</p>
+            <h2>(h2)</h2>
+            <hr class="line-animated">
+            <p><span>Regras da Comunidade Skylith</span><br><br><span>Termos de Uso</span><br><br><span>Denúncias e apelações</span></p>
+            
+            
+            
+        <h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2><h2>a</h2></div>
+        
+        
+        
     </div>
-
-
-
-
-
-
-
-
-
-
 
 
 </body></html>
